@@ -11,6 +11,7 @@ SELECT
   ROUND (qty * purchase_price, 1) AS purchase_cost,
   ROUND (turnover - (qty * purchase_price), 0) AS margin,
 FROM `woven-invention-475010-a4.course14.gwz_sales_margin`
+ORDER BY date_date DESC
 ;
 
 -- daily margin
@@ -27,7 +28,7 @@ SELECT
   ROUND(SUM(order_margin + shipping_fee - log_cost - ship_cost),2) AS ops_daily_margin 
 FROM gwz_orders_operational
 GROUP BY date_date
-ORDER BY date_date ASC
+ORDER BY date_date DESC
 ;
 
 
